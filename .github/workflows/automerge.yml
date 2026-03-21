@@ -7,8 +7,8 @@ on:
 jobs:
   automerge:
     runs-on: ubuntu-latest
-    # Updated to match the bot name from your screenshot
-    if: github.actor == 'exercism-solutions-syncer'
+    # This checks if the name contains the bot name, making it more robust
+    if: contains(github.actor, 'exercism-solutions-syncer')
     permissions:
       pull-requests: write
       contents: write
